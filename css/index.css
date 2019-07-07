@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    color: #ffffff;
+    background: #333333;
+}
+
+section#landing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+section#landing div#landingBGBlender {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: #000000;
+    transition: .5s opacity linear;
+}
+
+section#landing h1#username {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    padding: 0 1rem 0 2rem;
+    margin: 0;
+    background: rgba(0, 0, 0, .5);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+section#landing div#medias {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+section#landing div#medias a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+section#landing div#medias a i {
+    font-size: 10rem;
+    margin: 1vw;
+    cursor: pointer;
+    transition: transform 100ms linear;
+}
+
+section#landing div#medias a i:hover {
+    transform: scale(1.1);
+}
