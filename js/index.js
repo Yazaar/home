@@ -4,7 +4,7 @@ let currentImage = Math.floor(Math.random()*images.length);
 function swapBackground(name){
     document.querySelector('div#landingBGBlender').style.opacity = '1';
     setTimeout(function(){
-        document.querySelector('section#landing').style.background = 'url(../img/' + name + ')';
+        document.querySelector('section#landing').style.background = 'url(./img/' + name + ')';
         document.querySelector('div#landingBGBlender').style.opacity = '0';
     }, 600);
 }
