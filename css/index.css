@@ -41,6 +41,7 @@ section#landing h1#username {
 }
 
 section#landing div#medias {
+    text-align: center;
     background: rgba(0, 0, 0, .5);
     border-radius: 2rem;
     z-index: 1;
