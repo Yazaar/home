@@ -126,7 +126,8 @@ div#socials-content aside:nth-child(2) div.social h1 {
 }
 
 .twitter-timeline {
-    flex: 1;
+    height: unset !important;
+    flex: 1 !important;
 }
 
 
