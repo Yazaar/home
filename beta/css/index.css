@@ -125,6 +125,10 @@ div#socials-content aside:nth-child(2) div.social h1 {
     font-size: 1.5rem;
 }
 
+.twitter-timeline {
+    flex: 1;
+}
+
 
 @media screen and (max-width:30rem) {
     div#socials-content {
