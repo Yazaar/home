@@ -56,9 +56,11 @@ div#socials-content aside:nth-child(2) {
 
 div#socials-content aside:nth-child(2) div.social {
     display: none;
+    overflow: hidden;
     box-sizing: border-box;
     padding: .5rem;
     height: 100%;
+    max-height: 30rem;
     flex-direction: column;
     align-items: center;
 }
@@ -124,12 +126,6 @@ div#socials-content aside:nth-child(2) div.social h1 {
 .cardWrapper section:nth-child(2) h3 {
     font-size: 1.5rem;
 }
-
-.twitter-timeline {
-    height: 100% !important;
-    max-height: 26rem !important;
-}
-
 
 @media screen and (max-width:30rem) {
     div#socials-content {
