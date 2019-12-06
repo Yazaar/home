@@ -11,7 +11,7 @@
     transform: translateY(-1rem);
 }
 
-h1#connect {
+.title {
     font-family: 'Roboto Mono', monospace;
     font-size: 3rem;
     display: inline-block;
@@ -21,40 +21,41 @@ h1#connect {
     border: .2rem solid #000000;
     border-bottom: none;
     border-left: none;
+    margin-top: 1rem;
 }
 
-div#socials-content {
+div.TitleBody {
     border-top: .2rem solid #000000;
     border-bottom: .2rem solid #000000;
     background: rgba(0, 0, 0, .2);
     display: flex;
 }
 
-div#socials-content aside {
+div.TitleBody aside {
     display: flex;
     flex-direction: column;
 }
 
-div#socials-content aside:nth-child(1) {
+div.TitleBody aside:nth-child(1) {
     border-right: .2rem solid #000000;
 }
 
-div#socials-content aside:nth-child(1) i {
+div.TitleBody aside:nth-child(1) i {
     font-size: 4rem;
     margin: 1rem 2rem;
     color: #2e2e2e;
 }
 
-div#socials-content aside:nth-child(1) i.active {
+div.TitleBody aside:nth-child(1) i.active {
     transform: scale(1.2);
     color: #000000;
 }
 
-div#socials-content aside:nth-child(2) {
+div.TitleBody aside:nth-child(2) {
     flex: 5;
 }
 
-div#socials-content aside:nth-child(2) div.social {
+div.TitleBody aside:nth-child(2) div.social {
     display: none;
     overflow: hidden;
     box-sizing: border-box;
@@ -65,7 +66,7 @@ div#socials-content aside:nth-child(2) div.social {
     text-align: center;
 }
 
-div#socials-content aside:nth-child(2) div.social h1 {
+div.TitleBody aside:nth-child(2) div.social h1 {
     font-family: 'Roboto Mono', monospace;
     font-size: 2rem;
     margin-bottom: .5rem;
@@ -132,17 +133,107 @@ div#socials-content aside:nth-child(2) div.social h1 {
     width: 20rem !important;
 }
 
+/* WebPages section */
+
+section#pages .TitleBody {
+    display: block;
+}
+
+.InformativeText {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#PagesBottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 1rem;
+    padding-bottom: 1rem;
+}
+
+div.ProjectItem {
+    display: flex;
+    flex-direction: column;
+}
+
+#PagesBottom div.PageContent {
+    height: 100%;
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, .2) rgba(0, 0, 0, .2);
+}
+
+#PagesBottom div.PageContent:hover {
+    background: rgba(0, 0, 0, .2);
+}
+
+#PagesBottom div.PageContent::-webkit-scrollbar {
+    width: .5rem;
+    background: rgba(0, 0, 0, .2);
+}
+
+#PagesBottom div.PageContent::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 1rem;
+}
+
+#PagesBottom div.ProjectItem {
+    width: 16rem;
+    height: 16rem;
+    margin: 1rem;
+    background: rgba(0, 0, 0, .3);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.CodeLink {
+    color: #000000;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.CodeLink:hover {
+    font-weight: bold;
+    background: rgba(0, 0, 0, .2);
+}
+
+.ProjectLink {
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    height: 12rem;
+}
+
+
+
+#PagesBottom div.ProjectItem::-webkit-scrollbar {
+    background: rgba(0, 0, 0, .2);
+}
+
+#PagesBottom div.ProjectItem::-webkit-scrollbar-corner {
+}
+
+#PagesBottom div.ProjectItem img {
+    width: 13rem;
+}
+
+/* WebPages section */
+
+
 @media screen and (max-width:30rem) {
-    div#socials-content {
+    div.TitleBody {
         flex-direction: column;
     }
-    div#socials-content aside:nth-child(1) {
+    div.TitleBody aside:nth-child(1) {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
     }
     
-    div#socials-content aside:nth-child(1) i {
+    div.TitleBody aside:nth-child(1) i {
         margin: .5rem;
     }
 }
