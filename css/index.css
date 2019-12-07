@@ -133,9 +133,9 @@ div.TitleBody aside:nth-child(2) div.social h1 {
     width: 20rem !important;
 }
 
-/* WebPages section */
+/* WebPages + Projects section */
 
-section#pages .TitleBody {
+section#PagesSection .TitleBody, section#ProjectSection .TitleBody {
     display: block;
 }
 
@@ -145,7 +145,7 @@ section#pages .TitleBody {
     text-align: center;
 }
 
-#PagesBottom {
+.TitleBodyBottom {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -158,7 +158,7 @@ div.ProjectItem {
     flex-direction: column;
 }
 
-#PagesBottom div.PageContent {
+.TitleBodyBottom div.PageContent {
     height: 100%;
     padding: 1rem;
     overflow-y: scroll;
@@ -166,21 +166,21 @@ div.ProjectItem {
     scrollbar-color: rgba(0, 0, 0, .2) rgba(0, 0, 0, .2);
 }
 
-#PagesBottom div.PageContent:hover {
+.TitleBodyBottom div.PageContent:hover {
     background: rgba(0, 0, 0, .2);
 }
 
-#PagesBottom div.PageContent::-webkit-scrollbar {
+.TitleBodyBottom div.PageContent::-webkit-scrollbar {
     width: .5rem;
     background: rgba(0, 0, 0, .2);
 }
 
-#PagesBottom div.PageContent::-webkit-scrollbar-thumb {
+.TitleBodyBottom div.PageContent::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, .2);
     border-radius: 1rem;
 }
 
-#PagesBottom div.ProjectItem {
+.TitleBodyBottom div.ProjectItem {
     width: 16rem;
     height: 16rem;
     margin: 1rem;
@@ -207,20 +207,22 @@ div.ProjectItem {
     height: 12rem;
 }
 
+.ProjectLink.OneLink {
+    height: 100%;
+}
 
-
-#PagesBottom div.ProjectItem::-webkit-scrollbar {
+.TitleBodyBottom div.ProjectItem::-webkit-scrollbar {
     background: rgba(0, 0, 0, .2);
 }
 
-#PagesBottom div.ProjectItem::-webkit-scrollbar-corner {
+.TitleBodyBottom div.ProjectItem::-webkit-scrollbar-corner {
 }
 
-#PagesBottom div.ProjectItem img {
+.TitleBodyBottom div.ProjectItem img {
     width: 13rem;
 }
 
-/* WebPages section */
+/* WebPages  + Projects section */
 
 
 @media screen and (max-width:30rem) {

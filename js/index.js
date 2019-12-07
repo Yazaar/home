@@ -97,7 +97,7 @@ if (true) {
 
     let showingHeader = true
     let lastScrollPos = 0
-    let headerH1 = document.querySelector('header h1')
+    let headerH1 = document.querySelector('header a#HeaderTitle')
     
     triggerHeaderH1()
     temp = document.querySelectorAll('.letter-animation')
