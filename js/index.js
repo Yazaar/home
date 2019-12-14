@@ -55,6 +55,49 @@ if (true) {
         xml.send()
     }
 
+    let getTwitchUserId = function(login){
+        let xml = new XMLHttpRequest()
+        xml.onreadystatechange = function() {
+            if (xml.readyState === 4){
+                console.log(xml.status)
+                console.log(JSON.parse(xml.response))
+            }
+        }
+        xml.open('get', 'https://api.twitch.tv/helix/users?login=' + login)
+        xml.setRequestHeader('Client-Id', 'br4977lmviz3ijg5fum01ie38p49im')
+        xml.send()
+    }
+
+    let doCORSRequest = function(options, printResult) {
+        let cors_api_url = 'https://cors-anywhere.herokuapp.com/'
+        let x = new XMLHttpRequest()
+        x.open(options.method, cors_api_url + options.url)
+        x.onload = x.onerror = function() {
+            printResult(x.responseText || '')
+        }
+        if (/^POST/i.test(options.method)) {
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+        }
+        x.send(options.data)
+    }
+
+    let getTwitchHost = function(){
+        doCORSRequest({
+            method: 'GET',
+            url: 'https://tmi.twitch.tv/hosts?include_logins=1&host=64242999',
+            data: ''
+        }, function(responseData){
+            if (responseData === ''){
+                return
+            }
+            let data = JSON.parse(responseData).hosts[0]
+            if (data.target_login !== undefined){
+                document.getElementById('twitch-video').src = 'https://player.twitch.tv/?channel=' + data.target_login + '&autoplay=false'
+                document.getElementById('twitch-chat').src = 'https://www.twitch.tv/embed/' + data.target_login + '/chat?darkpopout'
+            }
+        });
+    }
+
     let resizeEvent = function(){
         let YTFrame = document.querySelector('#YouTubeIframe')
         let YTWidth = YTFrame.offsetWidth
@@ -106,4 +149,5 @@ if (true) {
     })
     temp = undefined
     getLatestVideo()
+    getTwitchHost()
 }
