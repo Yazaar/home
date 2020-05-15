@@ -3,6 +3,7 @@ document.execCommand('defaultParagraphSeparator', false, 'div');
 var app = new Vue({
     el: '#app',
     data: {
+        remsize: parseFloat(getComputedStyle(document.documentElement).fontSize),
         showNotes: true,
         notes: JSON.parse(window.localStorage.getItem('notes')) || [],
         currentNoteIndex: null,
@@ -28,7 +29,7 @@ var app = new Vue({
                 if (paper === null) {
                     return;
                 }
-                this.paperWidth = paper.offsetWidth;
+                this.paperWidth = paper.offsetWidth- (2 * this.remsize);
             });
         },
         newNote: function () {
@@ -82,7 +83,7 @@ var app = new Vue({
                 if (paper === null) {
                     return;
                 }
-                this.paperWidth = paper.offsetWidth;
+                this.paperWidth = paper.offsetWidth - (2 * this.remsize);
             });
             this.selectedNodeIndex = null;
         },
@@ -322,12 +323,16 @@ var app = new Vue({
             this.notes[this.currentNoteIndex].content[this.selectedNodeIndex].data[index].text = e.currentTarget.innerHTML;
             this.saveNotes();
         },
+        moveBack: function(){
+            this.currentNoteIndex = null;
+            this.currentNote = null;
+        },
         onResize: function(){
             var paper = document.querySelector('#content');
             if (paper === null) {
                 return;
             }
-            this.paperWidth = paper.offsetWidth;
+            this.paperWidth = paper.offsetWidth - (2 * this.remsize);
         }
     },
     mounted: function(){

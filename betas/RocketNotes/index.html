@@ -11,7 +11,7 @@
         <h1>Rocket<br><span>Notes</span></h1>
     </header>
     <div id="app">
-        <aside v-bind:class="{open: showNotes}">
+        <aside v-bind:class="{open: showNotes, showingNote: currentNote !== null}">
             <section id="blinder">
                 <h2 class="title">My Notes</h2>
                 <section class="tools">
@@ -37,6 +37,7 @@
         <main>
             <div id="leftarrow" v-on:click="toggleView" v-bind:class="{open: showNotes}">&lt;</div>
             <div id="note" v-if="currentNote !== null">
+                <div id="moveBack" v-on:click="moveBack">Go Back</div>
                 <div class="tools">
                     <div class="group">
                         <div class="groupItem left" title="text to the left" v-on:click="changeTextAlign">

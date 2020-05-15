@@ -178,6 +178,10 @@ body {
             }
 
             #note {
+                #moveBack {
+                    display: none;
+                }
+
                 margin: 0 .5rem 0 3.5rem;
                 .left {
                     text-align: left;
@@ -270,7 +274,7 @@ body {
                                 display: inline-block;
                             }
 
-                            .image .imageWrapper:hover {
+                            .image .imageWrapper:hover, .image .imageWrapper:active {
                                 .imageTools {
                                     display: inline-block;
                                 }
@@ -372,6 +376,45 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (max-width: 42rem) {
+    header {
+        text-align: center;
+    }
+
+    #leftarrow {
+        display: none;
+    }
+
+    body #app main #note {
+        margin: 0 .5rem;
+    }
+
+    body #app aside #blinder #noteList .noteItem .noteTools {
+        display: block;
+    }
+
+    body #app main #note #moveBack {
+        display: block;
+        background: purple;
+        text-align: center;
+        margin-top: .3rem;
+        font-size: 1.2rem;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    body #app aside {
+        width: 100%;
+        &.open {
+            width: 100%;
+        }
+
+        &.showingNote {
+            display: none;
         }
     }
 }
