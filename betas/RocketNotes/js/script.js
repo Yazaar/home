@@ -9,9 +9,22 @@ var app = new Vue({
         currentNoteIndex: null,
         currentNote: null,
         selectedNodeIndex: null,
-        paperWidth: 0
+        paperWidth: 0,
+        noteFilter: ''
     },
     methods: {
+        saveFilter: function(e){
+            this.noteFilter = e.currentTarget.value.toLowerCase();
+        },
+        checkToDisplay: function(note){
+            var title = note.title.toLowerCase();
+            for (var i = 0; i < this.noteFilter.length; i++) {
+                if (this.noteFilter[i] !== title[i]) {
+                    return false;
+                }
+            }
+            return true;
+        },
         copy: function(obj) {
             return JSON.parse(JSON.stringify(obj));
         },
@@ -78,6 +91,7 @@ var app = new Vue({
         displayNote: function (note, index) {
             this.currentNoteIndex = index;
             this.currentNote = this.copy(note);
+            this.selectedNodeIndex = null;
             this.$nextTick(function(){
                 var paper = document.querySelector('#content');
                 if (paper === null) {
@@ -85,7 +99,6 @@ var app = new Vue({
                 }
                 this.paperWidth = paper.offsetWidth - (2 * this.remsize);
             });
-            this.selectedNodeIndex = null;
         },
         saveNotes: function() {
             if (this.currentNoteIndex !== 0 && this.currentNoteIndex !== null) {
@@ -114,10 +127,7 @@ var app = new Vue({
                 type: 'unordered list',
                 data: ['']
             });
-            this.currentNote.content.push({
-                type: 'unordered list',
-                data: ['']
-            });
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.selectedNodeIndex = this.currentNote.content.length-1;
             this.saveNotes();
         },
@@ -127,10 +137,7 @@ var app = new Vue({
                 type: 'ordered list',
                 data: ['']
             });
-            this.currentNote.content.push({
-                type: 'ordered list',
-                data: ['']
-            });
+            this.currentNote.content = this.notes(this.notes[this.currentNoteIndex].content);
             this.selectedNodeIndex = this.currentNote.content.length-1;
             this.saveNotes();
         },
@@ -141,11 +148,7 @@ var app = new Vue({
                 data: [],
                 textAlign: 'left'
             });
-            this.currentNote.content.push({
-                type: 'image',
-                data: [],
-                textAlign: 'left'
-            });
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.selectedNodeIndex = this.currentNote.content.length-1;
             this.saveNotes();
         },
@@ -154,10 +157,7 @@ var app = new Vue({
                 type: 'checklist',
                 data: [{text: '', checked: 'unchecked'}]
             });
-            this.currentNote.content.push({
-                type: 'checklist',
-                data: [{text: '', checked: 'unchecked'}]
-            });
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.saveNotes();
         },
         newTextElement: function(){
@@ -167,11 +167,7 @@ var app = new Vue({
                 data: '',
                 textAlign: 'left'
             });
-            this.currentNote.content.push({
-                type: 'text',
-                data: '',
-                textAlign: 'left'
-            });
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.selectedNodeIndex = this.currentNote.content.length-1;
             this.saveNotes();
         },
@@ -243,10 +239,7 @@ var app = new Vue({
                     });
                     app.saveNotes();
                     if (addToNote === app.currentNoteIndex) {
-                        app.currentNote.content[addToElement].data.push({
-                            src: base64image,
-                            width: 0.1
-                        });
+                        app.currentNote.content = app.copy(app.notes[addToNote].content);
                     }
                 });
                 image.src = URL.createObjectURL(this.files[0]);
@@ -280,7 +273,7 @@ var app = new Vue({
         addListItem: function(){
             this.notes[this.currentNoteIndex].lastEdited = this.getTimeStr();
             this.notes[this.currentNoteIndex].content[this.selectedNodeIndex].data.push('');
-            this.currentNote.content[this.selectedNodeIndex].data.push('');
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.saveNotes();
         },
         deleteListItem: function(){
@@ -303,10 +296,7 @@ var app = new Vue({
                 text: '',
                 checked: 'unchecked'
             });
-            this.currentNote.content[this.selectedNodeIndex].data.push({
-                text: '',
-                checked: 'unchecked'
-            });
+            this.currentNote.content[this.selectedNodeIndex].data = this.copy(this.notes[this.currentNoteIndex].content[this.selectedNodeIndex].data);
             this.saveNotes();
         },
         checkItem: function(nodeIndex, checkIndex){
