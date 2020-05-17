@@ -20,8 +20,8 @@
                 </section>
                 <div id="noteList">
                     <div v-for="note, index in notes" v-if="checkToDisplay(note)" class="noteItem" :class="{ 'activeNote' : index == currentNoteIndex}" v-on:click="displayNote(note, index)">
-                        <h3 class="noteTitle" v-text="note.title"></h3>
-                        <p class="noteTimestamp" v-text="note.lastEdited"></p>
+                        <h3 class="noteTitle" v-html="note.title"></h3>
+                        <p class="noteTimestamp" v-html="note.lastEdited"></p>
                         <div class="noteTools" v-on:click.stop>
                             <div v-on:click="deleteNote" title="delete note">
                                 <i class="fas fa-trash-alt"></i>
@@ -74,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                <h1 id="title" @input="titleChange" v-on:click="selectNode(null)" v-text="currentNote.title" contenteditable></h1>
+                <h1 id="title" @input="titleChange" v-on:click="selectNode(null)" v-html="currentNote.title" contenteditable></h1>
                 <div id="content">
                     <div class="noteBlock" v-for="block, index in currentNote.content" :class="{ 'activeBlock' : index == selectedNodeIndex}">
                         <div class="text" v-if="block.type === 'text'">
@@ -92,7 +92,7 @@
                                     <i class="fas fa-chevron-circle-down"></i>
                                 </div>
                             </div>
-                            <p @input="textChange" :class="block.textAlign" v-on:click="selectNode(index)" v-text="block.data" contenteditable></p>
+                            <p @input="textChange" :class="block.textAlign" v-on:click="selectNode(index)" v-html="block.data" contenteditable></p>
                         </div>
                         <div class="unorderedList" v-on:click="selectNode(index)" v-else-if="block.type === 'unordered list'">
                             <div class="blockTools" v-on:click.stop>
@@ -117,7 +117,7 @@
                             </div>
                             <ul>
                                 <li v-for="item, itemIndex in block.data">
-                                    <p @input="function(e){saveListText(e, itemIndex);}" v-text="item" contenteditable></p>
+                                    <p @input="function(e){saveListText(e, itemIndex);}" v-html="item" contenteditable></p>
                                 </li>
                             </ul>
                         </div>
@@ -144,7 +144,7 @@
                             </div>
                             <ol>
                                 <li v-for="item, itemIndex in block.data">
-                                    <p @input="function(e){saveListText(e, itemIndex);}" v-text="item" contenteditable></p>
+                                    <p @input="function(e){saveListText(e, itemIndex);}" v-html="item" contenteditable></p>
                                 </li>
                             </ol>
                         </div>
@@ -205,7 +205,7 @@
                             <div class="checklistWrapper">
                                 <div class="checklistItem" v-for="item, itemIndex in block.data">
                                     <div class="bullet" :class="item.checked" v-on:click="checkItem(index, itemIndex)"></div>
-                                    <p @input="function(e){saveChecklistText(e, itemIndex);}" v-text="item.text" contenteditable></p>
+                                    <p @input="function(e){saveChecklistText(e, itemIndex);}" v-html="item.text" contenteditable></p>
                                 </div>
                             </div>
                         </div>

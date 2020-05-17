@@ -37,15 +37,9 @@ var app = new Vue({
             } else {
                 this.showNotes = true;
             }
-            this.$nextTick(function(){
-                var paper = document.querySelector('#content');
-                if (paper === null) {
-                    return;
-                }
-                this.paperWidth = paper.offsetWidth- (2 * this.remsize);
-            });
+            this.$nextTick(this.onResize);
         },
-        newNote: function () {
+        newNote: function() {
             this.notes.unshift({
                 title: 'New Note',
                 content: [],
@@ -92,13 +86,7 @@ var app = new Vue({
             this.currentNoteIndex = index;
             this.currentNote = this.copy(note);
             this.selectedNodeIndex = null;
-            this.$nextTick(function(){
-                var paper = document.querySelector('#content');
-                if (paper === null) {
-                    return;
-                }
-                this.paperWidth = paper.offsetWidth - (2 * this.remsize);
-            });
+            this.$nextTick(this.onResize);
         },
         saveNotes: function() {
             if (this.currentNoteIndex !== 0 && this.currentNoteIndex !== null) {
@@ -227,15 +215,27 @@ var app = new Vue({
                 image.addEventListener('load', function(){
                     var canvas = document.createElement('canvas');
                     var context = canvas.getContext('2d');
-                    canvas.setAttribute('width', this.width);
-                    canvas.setAttribute('height', this.height);
-                    context.clearRect(0, 0, this.width, this.height);
-                    context.drawImage(this, 0, 0, this.width, this.height);
+                    var height = this.height;
+                    var width = this.width;
+                    var maxSize = 200;
+                    if (width > maxSize) {
+                        height = height * (maxSize / width);
+                        width = maxSize;
+                    }
+                    if (height > maxSize) {
+                        width = width * (maxSize / height);
+                        height = maxSize;
+                    }
+                    console.log(width + ' | ' + height);
+                    canvas.setAttribute('width', width);
+                    canvas.setAttribute('height', height);
+                    context.clearRect(0, 0, width, height);
+                    context.drawImage(this, 0, 0, width, height);
                     var base64image = canvas.toDataURL();
                     app.notes[addToNote].lastEdited = app.getTimeStr();
                     app.notes[addToNote].content[addToElement].data.push({
                         src: base64image,
-                        width: 0.1
+                        width: 0.3
                     });
                     app.saveNotes();
                     if (addToNote === app.currentNoteIndex) {
@@ -257,7 +257,7 @@ var app = new Vue({
         },
         zoomInImage: function(index){
             var width = Math.floor((this.currentNote.content[this.selectedNodeIndex].data[index].width + 0.05)*100)/100;
-            if (width < 1) {
+            if (width <= 1) {
                 this.notes[this.currentNoteIndex].lastEdited = this.getTimeStr();
                 this.notes[this.currentNoteIndex].content[this.selectedNodeIndex].data[index].width = width;
                 this.currentNote.content[this.selectedNodeIndex].data[index].width = width;
