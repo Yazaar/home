@@ -125,7 +125,7 @@ var app = new Vue({
                 type: 'ordered list',
                 data: ['']
             });
-            this.currentNote.content = this.notes(this.notes[this.currentNoteIndex].content);
+            this.currentNote.content = this.copy(this.notes[this.currentNoteIndex].content);
             this.selectedNodeIndex = this.currentNote.content.length-1;
             this.saveNotes();
         },
@@ -190,59 +190,52 @@ var app = new Vue({
             this.currentNote = this.copy(this.notes[this.currentNoteIndex]);
             this.saveNotes();
         },
-        deleteNote: function(){
-            this.notes.splice(this.currentNoteIndex, 1);
+        deleteNote: function(index){
+            this.notes.splice(index, 1);
             this.currentNoteIndex = null;
             this.currentNote = null;
             this.selectedNodeIndex = null;
             this.saveNotes();
         },
-        copyNote: function(){
-            var copyObject = this.copy(this.notes[this.currentNoteIndex]);
+        copyNote: function(index){
+            var copyObject = this.copy(this.notes[index]);
             copyObject.lastEdited = this.getTimeStr();
             this.notes.unshift(copyObject);
             this.currentNote = this.copy(copyObject);
             this.currentNoteIndex = 0;
         },
         addImage: function(){
+            var parent = this;
             var addToNote = this.currentNoteIndex;
             var addToElement = this.selectedNodeIndex;
 
             var fileInput = document.createElement('input');
             fileInput.type = 'file';
             fileInput.addEventListener('input', function(){
+                var file = this.files[0];
                 var image = new Image();
                 image.addEventListener('load', function(){
-                    var canvas = document.createElement('canvas');
-                    var context = canvas.getContext('2d');
-                    var height = this.height;
-                    var width = this.width;
-                    var maxSize = 200;
-                    if (width > maxSize) {
-                        height = height * (maxSize / width);
-                        width = maxSize;
+                    /* file is a valid image source */
+                    var reader = new FileReader();
+
+                    reader.onload = function(){
+                        if (parent.notes[addToNote] === undefined || parent.notes[addToNote].content[addToElement] === undefined || parent.notes[addToNote].content[addToElement].type !== 'image') {
+                            return;
+                        }
+            
+                        parent.notes[addToNote].lastEdited = app.getTimeStr();
+                        parent.notes[addToNote].content[addToElement].data.push({
+                            src: this.result,
+                            width: 0.3
+                        });
+                        if (addToNote === parent.currentNoteIndex) {
+                            parent.currentNote.content = parent.copy(parent.notes[addToNote].content);
+                        }
                     }
-                    if (height > maxSize) {
-                        width = width * (maxSize / height);
-                        height = maxSize;
-                    }
-                    console.log(width + ' | ' + height);
-                    canvas.setAttribute('width', width);
-                    canvas.setAttribute('height', height);
-                    context.clearRect(0, 0, width, height);
-                    context.drawImage(this, 0, 0, width, height);
-                    var base64image = canvas.toDataURL();
-                    app.notes[addToNote].lastEdited = app.getTimeStr();
-                    app.notes[addToNote].content[addToElement].data.push({
-                        src: base64image,
-                        width: 0.3
-                    });
-                    app.saveNotes();
-                    if (addToNote === app.currentNoteIndex) {
-                        app.currentNote.content = app.copy(app.notes[addToNote].content);
-                    }
+
+                    reader.readAsDataURL(file);
                 });
-                image.src = URL.createObjectURL(this.files[0]);
+                image.src = URL.createObjectURL(file);
             });
             fileInput.click();
         },
