@@ -92,8 +92,8 @@ if (true) {
             }
             let data = JSON.parse(responseData).hosts[0]
             if (data.target_login !== undefined){
-                document.getElementById('twitch-video').src = 'https://player.twitch.tv/?channel=' + data.target_login + '&autoplay=false'
-                document.getElementById('twitch-chat').src = 'https://www.twitch.tv/embed/' + data.target_login + '/chat?darkpopout'
+                document.getElementById('twitch-video').src = 'https://player.twitch.tv/?channel=' + data.target_login + '&autoplay=false&parent=yazaar.github.io'
+                document.getElementById('twitch-chat').src = 'https://www.twitch.tv/embed/' + data.target_login + '/chat?darkpopout&parent=yazaar.github.io'
             }
         });
     }
