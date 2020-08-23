@@ -67,7 +67,7 @@ body {
     border-top: rgba(255, 255, 255, .2) solid .1rem;
 }
 
-.categories a:last-of-type {
+.categories a.last {
     border-bottom: rgba(255, 255, 255, .2) solid .1rem;
 }
 
@@ -76,13 +76,28 @@ body {
 }
 
 #rightPage {
-    margin: 1rem;
+    margin: 1rem .5rem 1rem 1rem;
+    padding-right: .5rem;
     overflow: scroll;
 }
 
 #rightPage::-webkit-scrollbar {
-    width: 0;
+    width: .5rem;
     height: 0;
+}
+
+#rightPage::-webkit-scrollbar-track {
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, .5);
+}
+
+#rightPage::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background: rgba(0, 0, 0, .6);
+}
+
+#rightPage::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, .5);
 }
 
 #rightPage h1 {
@@ -92,4 +107,16 @@ body {
 
 #rightPage p {
     font-size: 1.2rem;
+}
+
+.previewImage {
+    display: flex;
+}
+
+.previewImage img {
+    height: 30rem;
+}
+
+.previewImage section {
+    width: 40vw;
 }

@@ -19,28 +19,73 @@
                 <a href="#GettingStarted">Getting Started</a>
                 <a href="#layout">Layout</a>
                 <a href="#ConnectToHost">Connect To Host</a>
-                <a href="#ImportPresets">Import Presets</a>
+                <a href="#ImportPresets" class="last">Import Presets</a>
                 <h2>Developer</h2>
                 <a href="#CreatePresets">Create Presets</a>
-                <a href="#NodeTypes">Node Types</a>
+                <a href="#NodeTypes" class="last">Node Types</a>
             </section>
         </aside>
         <main id="rightPage">
             <h1>UNDER EARLY DEVELOPMENT</h1>
+            <p>The documentation page might not work properly since this is still under early development. Feel free to check it out or come back later (everything except the node types section has been written). The site has not yet been optimized for all types of devices.</p>
             <h1 id="GeneralInfo">General Info</h1>
-            <p>HTML Agent can be found on the <a href="https://chrome.google.com/webstore/detail/html-agent/lbcelgpefmbllnhhlbgpkompbhmfblpi" target="_blank" rel="noopener noreferrer">google chrome webstore</a> and is created and maintained by Yazaar. The extensions purpose is to bind your webactivity to a webserver for the purpose to make reactive experiences cross domain possible such as currently playing overlays for streamers. One example is my <a href="https://yazaar.herokuapp.com/MusicLink" target="_blank" rel="noopener noreferrer">MusicLink project</a>, which can be used together with this extension to bind YouTube, SoundCloud, Monstercat and other music sources directly to a recording/streaming software</p>
+            <p>HTML Agent can be found on the <a href="https://chrome.google.com/webstore/detail/html-agent/lbcelgpefmbllnhhlbgpkompbhmfblpi" target="_blank" rel="noopener noreferrer">google chrome webstore</a> and is created and maintained by Yazaar. The extensions purpose is to bind your web activity to a webserver for the purpose to power services such as currently playing overlays for streamers, but the possibilities are endless. One example is <a href="https://yazaar.herokuapp.com/MusicLink" target="_blank" rel="noopener noreferrer">Project MusicLink</a>, which can be used together with this extension to bind YouTube, SoundCloud, Monstercat and other webbased services to a currently playing widget compatible with recording/streaming software.</p>
             <h1 id="GettingStarted">Getting Started</h1>
-            <p>Hello</p>
+            <p>Start off by <a href="https://chrome.google.com/webstore/detail/html-agent/lbcelgpefmbllnhhlbgpkompbhmfblpi" target="_blank" rel="noopener noreferrer">installing the chrome extension here</a>. You are then ready to get started using HTML Agent! I take no responsibility for the presets you end up using and for the servers you connect yourself to. Make sure what you use can be trusted. This extension can easily be missused to steal your personal information! If you connect to my domain (yazaar.herokuapp.com) will no none of your data be stored for future analyzis and the presets made by me will never steal your personal information, but again, make sure what you use can be trusted. For a breif understanding of how to use the extension check out the <a href="#layout">Layout</a> section right underneath this.</p>
             <h1 id="layout">Layout</h1>
-            <p>Hello</p>
+            <section class="previewImage">
+                <section>
+                    <p>
+                        To the right can you see a preview of the chrome extension which should pop up by clicking the icon top right in the browser. You can read about each number underneath.<br><br>
+                        1: Enable or disable the chrome extension. Disabling the chrome extension will disable all active presets.<br><br>
+                        2: Choose if you wish to activate the presets for all tabs automatically (would recommend to keep it OFF).
+                        3: Activate the chrome extension on the current tab. Will automatically enable HTML Agent on all pages and refreshes until this tab is closed. All other tabs will stay disabled.<br><br>
+                        4: Save changes which has been made.<br><br>
+                        5: Will display all incomming traffic from the socket here, as long as the event is specified in field number 6 (ignore this, will probably never be in use).<br><br>
+                        6: All events specified here will be printed in field number 5. Each event to listen for is space separated, add a backslash (\) before the space if you wish to have a space in the event, add a double-backslash if you wish to have a backslash in the event.<br><br>
+                        7: The event that you wish to forward data to, important to be set correctly matching what the server are listening for (message is default).<br><br>
+                        8: The URL to the hosted server which you wish to forward preset data to.<br><br>
+                        9: Click to connect to the specified server, automatically saving if connection is successful.<br><br>
+                        10: Click to reset the specified server, will no longer remember the hostname and automatically connect.<br><br>
+                        11: If you would like to import someone elses preset, paste it hereand click the import button which will appear underneath the input field. Remember to click save after importing.<br><br>
+                        12: Here are you able to check what presets you have configured, all are always active as long as field 1 is set to ON. You are able to change everything about the selected preset. Remember to hit save when you have made any changes. Head over to <a href="#CreatePresets">Create Presets</a> if you wish to learn about configuring presets.
+                    </p>
+                </section>
+                <img src="./img/preview.png" alt="preview 1 of HTML Agent">
+            </section>
             <h1 id="ConnectToHost">Connect To Host</h1>
-            <p>Hello</p>
+            <p>Connecting to a host is done by typing the hostname of the server supporting SocketIO in field number 8 seen above (named SocketIO host). Should always start with http or https but use https as long as it is supported! Important for security purposes but also since chrome will block http hosts if the server is not running locally on the current computer (example: https://yazaar.herokuapp.com). When the host has been typed click the yellow "Connect" button and wait for the "Connected to: hostname" message, if "Host unreachable" pops up check if you typed correct hostname and that it supports SocketIO. How fast it connects depends on the server, please wait until "Connecting, please wait..." changes to "Connected to: hostname" or "Host unreachable" (do not close the extension popup, else the host will not be automatically saved). If you forward over private information through the extension (you should not...) make sure you can trust the hostname you are connecting to.</p>
             <h1 id="ImportPresets">Import Presets</h1>
-            <p>Hello</p>
-            <h1 id="#CreatePresets">Create Presets</h1>
-            <p>Hello</p>
-            <h1 id="#NoteTypes">Node Types</h1>
-            <p>Hello</p>
+            <p>Import any valid preset by pasting it in the field named "Import preset:". Click the import button with will appear after pasting in the field, the import will fail if the preset is invalid. On success is the import added to the presets list underneath. After importing a preset remember to hit save. The preset is now ready to be used!</p>
+            <h1 id="CreatePresets">Create Presets</h1>
+            <section class="previewImage">
+                <section>
+                    <p>
+                        To the right can you see a second preview of the chrome extension which displays what can be seen if a preset has been selected in the dropdown menu. The same drill, read about each number underneath.<br><br>
+                        1: Here are you able to select which preset you would like to display. If a preset is selected will number 2 to 9 appear.<br><br>
+                        2: Click this dangerous button if you would like to delete the preset currently displayed. Remember to click save to save the changes.<br><br>
+                        3: Copy the displayed presets import code to the clipboard. Perfect if you would like to save the preset locally or share with others.<br><br>
+                        4: Pick the name of the displayed preset. Important to make it easier to navigate the extension, has no functionality.<br><br>
+                        5: The URL which this preset should be listening on. Remember to not use the same URL in multiple presets since only the first match will be used. If the URL starts with what is written, then it is a match.<br><br>
+                        6: Click this button to magically fill the field above with the current tabs hostname (the path is ignored, have to be specified manually).<br><br>
+                        7: Here are you able to configure the format of the data to be posted. Default is a simple object or dictionary with key-value pairs (node name is the key and the node value is the value). Have to be in a JSON format. Example: {"key":"secretKey", "roomId":25, "data":__data__}<br><br>
+                        8: What the HTML Agent data object should be replaced by in the JSON formatted string above, in this case __data__. Which means the actual JSON string above will become something like this: {"key":"secretKey", "roomId":25, "data":{"var1":"val1", "var2":"val2"}}<br><br>
+                        9: Here are you able to select and create nodes to configure. If one is selected will number 11 to 15 appear.<br><br>
+                        10: Click on this dangerous button if you would like to delete the selected node from the selected preset. Remember to click save!<br><br>
+                        11: Here are you able to select what type of node you are editing. A list of all currently valid will appear once clicked. Each node is different, to learn about each and every one of them check out the <a href="#NodeTypes">Node Types</a> section found further down.<br><br>
+                        12: Specify the node name here, this will end up being the key for the HTML Agent object (the value will be the output of this node) as long as number 14 is not enabled.<br><br>
+                        13: The server is usually alerted about all value changes, but if this is disabled (enabled on the picture) will the server not be alerted. But the new data will be forwarded over together with next post of data.<br><br>
+                        14: If this is enabled will this specific key value pair not be forwarded over to the server on any posts. The node will only exist locally in the chrome extension for other nodes to manipulate the data. If enabled should number 13 usually be disabled.<br><br>
+                        15: Different types of nodes have different input fields like this one. What the fields does depends on the selected node type. Learn about the node types on the <a href="#NodeTypes">Node Types</a> section. In this case is the element text captured, what element is specified through the css selector (querySelector) in the "Element path:" input field. Again, learn more about node fields in further down.<br><br>
+                    </p>
+                </section>
+                <img src="./img/preview2.png" alt="preview 2 of HTML Agent">
+            </section>
+            <h1 id="NodeTypes">Node Types</h1>
+            <p>
+                A list of all currently valid nodes types can be seen here. Other node types than specified here are depricated should be avoided, alternatively very new. If you can find the same functionality through another node, then it is most certainly depricated, else new and not documented.<br><br>
+                NODE TYPES UNDER DEVELOPMENT
+            </p>
         </main>
     </section>
 </body>
