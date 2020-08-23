@@ -9,25 +9,32 @@
 <body>
     <section id="page">
         <aside id="leftPage">
-            <section id="title">
-                <img src="./img/HTMLAgentIcon.png" alt="HTML Agent icon">
-                <h1>DOCS</h1>
+            <section id="toggleSidebarWrapper">
+                <div id="toggleSidebar">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </section>
-            <section class="categories">
-                <h2>General User</h2>
-                <a href="#GeneralInfo">General Info</a>
-                <a href="#GettingStarted">Getting Started</a>
-                <a href="#layout">Layout</a>
-                <a href="#ConnectToHost">Connect To Host</a>
-                <a href="#ImportPresets" class="last">Import Presets</a>
-                <h2>Developer</h2>
-                <a href="#CreatePresets">Create Presets</a>
-                <a href="#NodeTypes" class="last">Node Types</a>
+            <section id="blinder">
+                <section id="title">
+                    <img src="./img/HTMLAgentIcon.png" alt="HTML Agent icon">
+                    <h1>DOCS</h1>
+                </section>
+                <section class="categories">
+                    <h2>General User</h2>
+                    <a href="#GeneralInfo">General Info</a>
+                    <a href="#GettingStarted">Getting Started</a>
+                    <a href="#layout">Layout</a>
+                    <a href="#ConnectToHost">Connect To Host</a>
+                    <a href="#ImportPresets" class="last">Import Presets</a>
+                    <h2>Developer</h2>
+                    <a href="#CreatePresets">Create Presets</a>
+                    <a href="#NodeTypes" class="last">Node Types</a>
+                </section>
             </section>
         </aside>
         <main id="rightPage">
-            <h1>UNDER EARLY DEVELOPMENT</h1>
-            <p>The documentation page might not work properly since this is still under early development. Feel free to check it out or come back later (everything except the node types section has been written). The site has not yet been optimized for all types of devices.</p>
             <h1 id="GeneralInfo">General Info</h1>
             <p>HTML Agent can be found on the <a href="https://chrome.google.com/webstore/detail/html-agent/lbcelgpefmbllnhhlbgpkompbhmfblpi" target="_blank" rel="noopener noreferrer">google chrome webstore</a> and is created and maintained by Yazaar. The extensions purpose is to bind your web activity to a webserver for the purpose to power services such as currently playing overlays for streamers, but the possibilities are endless. One example is <a href="https://yazaar.herokuapp.com/MusicLink" target="_blank" rel="noopener noreferrer">Project MusicLink</a>, which can be used together with this extension to bind YouTube, SoundCloud, Monstercat and other webbased services to a currently playing widget compatible with recording/streaming software.</p>
             <h1 id="GettingStarted">Getting Started</h1>
@@ -36,7 +43,7 @@
             <section class="previewImage">
                 <section>
                     <p>
-                        To the right can you see a preview of the chrome extension which should pop up by clicking the icon top right in the browser. You can read about each number underneath.<br><br>
+                        Next to this text can you see a preview of the chrome extension which should pop up by clicking the icon top right in the browser. You can read about each number underneath.<br><br>
                         1: Enable or disable the chrome extension. Disabling the chrome extension will disable all active presets.<br><br>
                         2: Choose if you wish to activate the presets for all tabs automatically (would recommend to keep it OFF).
                         3: Activate the chrome extension on the current tab. Will automatically enable HTML Agent on all pages and refreshes until this tab is closed. All other tabs will stay disabled.<br><br>
@@ -61,7 +68,7 @@
             <section class="previewImage">
                 <section>
                     <p>
-                        To the right can you see a second preview of the chrome extension which displays what can be seen if a preset has been selected in the dropdown menu. The same drill, read about each number underneath.<br><br>
+                        Next to this text can you see a second preview of the chrome extension which displays what can be seen if a preset has been selected in the dropdown menu. The same drill, read about each number underneath.<br><br>
                         1: Here are you able to select which preset you would like to display. If a preset is selected will number 2 to 9 appear.<br><br>
                         2: Click this dangerous button if you would like to delete the preset currently displayed. Remember to click save to save the changes.<br><br>
                         3: Copy the displayed presets import code to the clipboard. Perfect if you would like to save the preset locally or share with others.<br><br>
@@ -84,9 +91,58 @@
             <h1 id="NodeTypes">Node Types</h1>
             <p>
                 A list of all currently valid nodes types can be seen here. Other node types than specified here are depricated should be avoided, alternatively very new. If you can find the same functionality through another node, then it is most certainly depricated, else new and not documented.<br><br>
-                NODE TYPES UNDER DEVELOPMENT
+                <h2 class="NodeType">Fixed Value</h2>
+                <p>Argument: What the fixed value should be (automatically of the type string, int or float depending on input).</p>
+                <h2 class="NodeType">JavaScript Variable</h2>
+                <p>Argument: The global variable you would like to access, as an example would "player.audio.currentTime" return a integer representing the amount of seconds elapsed for the current track on monstercat.</p>
+                <h2 class="NodeType">Full URL</h2>
+                <p>No optional input fields, returns the current URL.</p>
+                <h2 class="NodeType">URL Path</h2>
+                <p>No optional input fields, returns the current path for the current URL.</p>
+                <h2 class="NodeType">URL Parameter</h2>
+                <p>Argument: The URL parameter you would like to return, "v" would as an example return the video id on YouTube.</p>
+                <h2 class="NodeType">Node Variable</h2>
+                <p>
+                    Path: The CSS selector (querySelector) to a specific element<br><br>
+                    Argument: The properly you would like to return, "innerHTML" would as an example return the HTML code within the selected element and "style.display" would as an example return the display CSS property. "style\.display" would return querySelector(".path")["style.display"].
+                </p>
+                <h2 class="NodeType">Text</h2>
+                <p>Path: The CSS selector (querySelector) to the specific element. Returns the text of the selected element.</p>
+                <h2 class="NodeType">Value</h2>
+                <p>Path: The CSS selector (querySelector) to the specific element. Returns the value if the selected input field, or whatever else has a value attribute.</p>
+                <h2 class="NodeType">Attribute</h2>
+                <p>
+                    Path: The CSS selector (querySelector) to the specific element.<br><br>
+                    Argument: The attribute you would like to return.
+                </p>
+                <h2 class="NodeType">CSS Processed Style</h2>
+                <p>
+                    Path: The CSS selector (querySelector) to the specific element.<br><br>
+                    Argument: The CSS property you would like to return.
+                </p>
+                <h2 class="NodeType">Cast Value</h2>
+                <p>
+                    Select value: Dropdown to select which node value you would like to convert<br><br>
+                    Argument: What you would like to convert the node value to (input only "int", "integer" or "float").
+                </p>
+                <h2 class="NodeType">Math Operation</h2>
+                <p>
+                    Argument: Type the math operation, only supporting one operation at a time (number/variable operation number/variable).<br><br>
+                    Operations: "+", "-", "*", "**" (^), "/", "%", "==", "===", "!=", "!==", "&gt;", "&gt;=", "&lt;", "&lt;="<br><br>
+                    var0 is parsed to the value of variable 0, the first node in the list (var1 = variable 1 etc)<br><br>
+                    Decimals should be written with a dot and not a comma (.).<br><br>
+                    Surprise, returns whatever is the result of the math operation.
+                </p>
+                <h2 class="NodeType">Force Post: Linear Increment</h2>
+                <p>
+                    Select value: Select a node value you would like to track<br><br>
+                    Number argument: The expected change per second (integer or float, dot and not comma)<br><br>
+                    Number argument 2: The accepted threshold, if the offset is larger than this will the node trigger.<br><br>
+                    Returns NOTHING, no key and value pair will be forwarded to the server (local variable toggle = useless, the auto post toggle works but what is the point of this node if no post happens? Keep enabled).
+                </p>
             </p>
         </main>
     </section>
+    <script src="./js/script.js"></script>
 </body>
 </html>

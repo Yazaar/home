@@ -15,12 +15,44 @@ body {
 }
 
 #leftPage {
-    padding: 0 1rem;
     flex-shrink: 0;
-    border-right: rgba(255, 255, 255, .2) solid .1rem;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    border-right: rgba(255, 255, 255, .2) solid .1rem;
+    padding: 0 1rem;
+}
+
+#toggleSidebarWrapper {
+    text-align: right;
+}
+
+#toggleSidebar {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 2.5rem;
+    width: 3rem;
+    cursor: pointer;
+}
+
+#toggleSidebar:hover div {
+    background: rgba(255, 255, 255, .5);
+}
+
+#toggleSidebar div {
+    width: 2rem;
+    height: 0.3rem;
+    border-radius: .3rem;
+    background: rgba(255, 255, 255, .3);
+}
+
+#blinder {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex-grow: 1;
 }
 
 #rightPage {
@@ -119,4 +151,55 @@ body {
 
 .previewImage section {
     width: 40vw;
+}
+
+.NodeType {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 50rem) {
+    #leftPage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        border-right: unset;
+        padding: 0;
+    }
+
+    #leftPage.show {
+        border-right: rgba(255, 255, 255, .2) solid .1rem;
+        padding: 0 1rem;
+        background: #000000;
+    }
+    
+    #blinder {
+        display: none;
+    }
+    
+    #leftPage.show #blinder {
+        display: flex;
+    }
+
+    #toggleSidebar {
+        display: inline-flex;
+    }
+}
+
+@media screen and (max-width: 44rem) {
+    .previewImage {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+
+    .previewImage img {
+        margin: 1rem;
+        height: unset;
+        max-width: 75vw;
+    }
+
+    .previewImage section {
+        width: unset;
+    }
 }
