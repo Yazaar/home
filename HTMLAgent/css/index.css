@@ -73,7 +73,9 @@ body {
 }
 
 .categories {
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-width: none;
     flex-grow: 1;
     margin: 1rem 0;
 }
@@ -110,7 +112,9 @@ body {
 #rightPage {
     margin: 1rem .5rem 1rem 1rem;
     padding-right: .5rem;
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, .6) rgba(255, 255, 255, .5);
 }
 
 #rightPage::-webkit-scrollbar {
