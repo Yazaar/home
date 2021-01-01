@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazaar | Beta Homepage</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <h1 class="animateFadeIn">Yazaar</h1>
+    </header>
+    <section id="me" class="pushIn">
+        <h2>
+            <span class="animateFadeIn inlineBlock blockMarking greenFont" data-animationName="fadeInScale" id="arrow1">>></span>
+            <span id="meText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow1">Me</span>
+        </h2>
+        <p class="simpleFadeIn" data-animateAfter="#meText" id="me1">Hi I am Yazaar! Some might know me as Jesper though.</p>
+        <p class="simpleFadeIn" data-animateAfter="#me1" id="me2">I am <span id="age"></span> years old and have lived in Sweden my entire life.</p>
+        <p class="simpleFadeIn" data-animateAfter="#me2" id="me3">Currently studying some form of computer science, lets be honest nobody cares about the details.</p>
+        <p class="simpleFadeIn" data-animateAfter="#me3" id="me4">On my spare time am I probably on Twitch, YouTube or programming.</p>
+        <p class="simpleFadeIn" data-animateAfter="#me4" id="me5">Might stream on Twitch from time to time but don't expect me to be active, same with my YouTube.</p>
+        <p class="simpleFadeIn" data-animateAfter="#me5" id="me6">I know Python and web development the best but also some C#, C++ and Ruby.</p>
+    </section>
+    <section id="socials" class="pushIn">
+        <h2 class="pushUp">
+            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow1" id="arrow2">>></span>
+            <span class="animateFadeIn inlineBlock greenFont" id="socialsText" data-animateAfter="#arrow2">Socials</span>
+        </h2>
+        <a href="https://www.twitch.tv/yazaar" target="_blank" rel="noopener noreferrer" id="twitchLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Twitch">
+            <i class="fab fa-twitch"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCaJnr3RRxwrYkMbdJ0NPFFw" target="_blank" rel="noopener noreferrer" id="youtubeLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animationName="fadeScale" data-animateAfter="#socialsText" title="Visit my YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://discord.gg/YTDnJUe" target="_blank" rel="noopener noreferrer" id="discordLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Join my Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://twitter.com/YazaarVideos" target="_blank" rel="noopener noreferrer" id="twitterLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/yazaar" target="_blank" rel="noopener noreferrer" id="githubLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Github">
+            <i class="fab fa-github"></i>
+        </a>
+    </section>
+    <section id="projects" class="pushIn">
+        <h2>
+            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow2" id="arrow3">>></span>
+            <span id="projectsText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow3">Projects</span>
+        </h2>
+        <section class="cardList">
+            <div class="cardItem rotateIn" id="project1" data-animationName="rotateIn" data-animateAfter="#projectsText">
+                <a href="https://github.com/Yazaar/CustomYouTubePlayer" class="codeLink">Github link</a>
+                <a href="/CustomYouTubePlayer" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/CustomYouTubePlayer.jpg" alt="Preview of Custom YouTube Player website">
+                    <h3>Custom YouTube Player</h3>
+                    <div class="fill">
+                        <p>Video about the project is out, check the github link to find the video. One of my first reactive websites but has evolved into a fully functional YouTube player. Play YouTube videos, queue YouTube videos, browse videos, view playlists and more! Twitch streamer? Use the songrequest/videorequest feature and much more (check the guide top right on the player's website)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project2" data-animationName="rotateIn" data-animateAfter="#project1">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/functions/RocketNotes" class="codeLink">Github link</a>
+                <a href="/WebMagic/functions/RocketNotes" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/RocketNotes.png" alt="Preview of MusicLink website">
+                    <h3>RocketNotes</h3>
+                    <div class="fill">
+                        <p>Notes application which I programmed as a exam project so no I don't like the code style used (vue)... But whatever it works...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project3" data-animationName="rotateIn" data-animateAfter="#project2">
+                <a class="codeLink">No Github link</a>
+                <a href="https://yazaar.herokuapp.com/MusicLink" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/MusicLink.jpg" alt="Preview of MusicLink website">
+                    <h3>MusicLink</h3>
+                    <div class="fill">
+                        <p>Webbased OBS widget to show what is currently playing on multiple websites such as YouTube, SoundCloud and Monstercat</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project4" data-animationName="rotateIn" data-animateAfter="#project5">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/games/MrJump" class="codeLink">Github link</a>
+                <a href="/WebMagic/games/MrJump" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/MrJump.jpg" alt="">
+                    <h3>Game: MrJump</h3>
+                    <div class="fill">
+                        <p>A game made as a school project, jump your way to the other side as fast as possible by jumping from platform to platform</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project5" data-animationName="rotateIn" data-animateAfter="#project6">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/TwitchSubBadges" class="codeLink">Github link</a>
+                <a href="/WebMagic/TwitchSubBadges" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/TwitchSubBadgeViewer.jpg" alt="Preview of Twitch sub badge viewer website">
+                    <h3>Twitch sub badge viewer</h3>
+                    <div class="fill">
+                        <p>View users twitch sub badges, nothing more to it really</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project6" data-animationName="rotateIn" data-animateAfter="#project7">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/3DBlocks" class="codeLink">Github link</a>
+                <a href="/WebMagic/WeirdAnimations/3DBlocks" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/3DBlocks.jpg" alt="Preview of 3D Blocks website">
+                    <h3>3D Blocks</h3>
+                    <div class="fill">
+                        <p>Enter a 3D world where you are able to rotate around boring 3D blocks</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project7" data-animationName="rotateIn" data-animateAfter="#project8">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/ImageCutter" class="codeLink">Github link</a>
+                <a href="/WebMagic/WeirdAnimations/ImageCutter" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/ImageCutter.jpg" alt="Preview of Image Cutter website">
+                    <h3>Image Cutter</h3>
+                    <div class="fill">
+                        <p>Just a weird cutting animation...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" id="project8" data-animationName="rotateIn" data-animateAfter="#projectsText">
+                <a href="https://github.com/Yazaar/WebMagic/tree/master/clocks/ParticleClock" class="codeLink">Github link</a>
+                <a href="/WebMagic/clocks/ParticleClock/?image=https://images.unsplash.com/photo-1532762471988-c0d67cc3f771?ixlib=rb-1.2.1&auto=format&fit=crop&w=1414&q=80" class="projectLink">Project link</a>
+                <div class="projectContent">
+                    <img src="./img/ParticleClock.jpg" alt="Preview of Custom YouTube Player website">
+                    <h3>Particle Clock</h3>
+                    <div class="fill">
+                        <p>A particle clock which supports awesome backgrounds, check out the github link above and find a short YouTube video</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section id="websites" class="pushIn">
+        <h2>
+            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow3" id="arrow4">>></span>
+            <span id="websitesText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow4">Websites</span>
+        </h2>
+        <section class="cardList">
+            <div class="cardItem rotateIn" id="website1" data-animationName="rotateIn" data-animateAfter="#websitesText">
+                <a class="codeLink">No github link</a>
+                <a class="projectLink">No site link</a>
+                <div class="projectContent">
+                    <img src="./img/Empty.png" alt="Preview of Custom YouTube Player website">
+                    <h3>Empty</h3>
+                    <div class="fill">
+                        <p>I don't have any right now, feel free to check out my projects above instead.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <script src="./js/index.js"></script>
+</body>
+</html>
