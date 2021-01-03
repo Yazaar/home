@@ -93,26 +93,25 @@ header span {
     margin-right: .5rem;
 }
 
-#socials > a {
+#socials > .socialWrapper {
     margin: 1rem .5rem;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
 }
 
-#socials > a > i:first-of-type {
+#socials > .socialWrapper > i:first-of-type {
     font-size: 3rem;
     color: #777777;
     transition: transform 250ms ease-in-out, color 250ms ease-in-out;
 }
 
-#socials > a.active > i:first-of-type {
+#socials > .socialWrapper.active > i:first-of-type {
     transform: scale(1.2);
     color: #00FF00;
 }
 
-#socials > a > i:last-of-type {
+#socials > .socialWrapper > i:last-of-type {
     font-size: 1.5rem;
     display: inline-block;
     color: #00FF00;
@@ -121,7 +120,7 @@ header span {
     transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
 }
 
-#socials > a.active > i:last-of-type {
+#socials > .socialWrapper.active > i:last-of-type {
     opacity: 1;
     transform: scaleX(1.75) translateY(0);
 }
@@ -210,6 +209,14 @@ header span {
     text-align: center;
     padding: .3rem 0;
     border-bottom: .1rem solid #00FF00;
+}
+
+.cardItem .codeLink:hover, .cardItem .projectLink:hover {
+    background: rgba(0, 255, 0, .2);
+}
+
+.cardItem .codeLink:active, .cardItem .projectLink:active {
+    background: rgba(0, 255, 0, .4);
 }
 
 .cardItem .projectContent {
