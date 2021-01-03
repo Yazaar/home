@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+body {
+    margin: 0;
+    background: #333333;
+}
+
+section#landing {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
+
+section#landing div#landingBGBlender {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: #000000;
+    transition: .5s opacity linear;
+}
+
+section#landing h1#username {
+    align-self: flex-start;
+    z-index: 2;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 4rem;
+    padding: 0 1rem 0 2rem;
+    margin: 1rem 0 0 0;
+    background: rgba(0, 0, 0, .5);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+section#landing div#medias {
+    text-align: center;
+    align-self: center;
+    justify-self: flex-end;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 2rem;
+    z-index: 1;
+    overflow: scroll;
+}
+
+section#landing div#medias::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+section#landing div#medias a {
+    text-decoration: none;
+}
+
+section#landing div#medias a i {
+    font-size: 10rem;
+    margin: 1vw;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+section#landing div#medias a i.fa-twitch:hover {
+    color: #6d0077;
+}
+
+section#landing div#medias a i.fa-youtube:hover {
+    color: #d31f1f;
+}
+
+section#landing div#medias a i.fa-twitter:hover {
+    color: #326ad1;
+}
+
+section#landing div#medias a i.fa-github:hover {
+    color: #8a8888;
+}
+
+section#landing div#medias a i:hover {
+    transform: scale(1);
+}

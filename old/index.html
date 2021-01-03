@@ -1,36 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Yazaar | My Site</title>
+    <title>Yazaar | Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/index.css">
-    
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-
 </head>
+
 <body>
-    <section id="landing">
-        <h1 id="username">Yazaar</h1>
-        <div id="landingBGBlender"></div>
-        <div id="medias">
-            <a target="_blank" rel="noopener noreferrer" href="https://twitch.tv/yazaar">
-                <i class="fab fa-twitch"></i>
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCaJnr3RRxwrYkMbdJ0NPFFw">
+    <header>
+        <a id="HeaderTitle">Yazaar</a>
+        <nav>
+            <a href="/beta">BETA PAGE</a>
+        </nav>
+    </header>
+    <section id="magic-text-area">
+        <h1 class="letter-animation">Welcome</h1>
+        <h2 class="letter-animation">to my website</h2>
+    </section>
+    <section id="socials">
+        <h1 class="title">Connect</h1>
+        <div class="TitleBody" id="socials-content">
+            <aside>
+                <i class="fab fa-twitch active"></i>
                 <i class="fab fa-youtube"></i>
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/YazaarVideos">
+                <i class="fab fa-discord"></i>
                 <i class="fab fa-twitter"></i>
-            </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/yazaar">
                 <i class="fab fa-github"></i>
-            </a>
+            </aside>
+            <aside>
+                <div id="social-twitch" class="social" style="display: flex;">
+                    <h1>Twitch</h1>
+                    <div id="twitch-container">
+                        <iframe src="https://player.twitch.tv/?channel=yazaar&autoplay=false&parent=yazaar.github.io" frameborder="0" allowfullscreen="true" scrolling="no" id="twitch-video"></iframe>
+                        <iframe src="https://www.twitch.tv/embed/yazaar/chat?darkpopout&parent=yazaar.github.io" frameborder="0" scrolling="no" id="twitch-chat"></iframe>
+                    </div>
+                </div>
+                <div id="social-youtube" class="social">
+                    <h1>YouTube</h1>
+                    <iframe id="YouTubeIframe" src="https://www.youtube.com/embed/ofNPVIquT3s" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+                <div id="social-discord" class="social">
+                    <h1>Discord</h1>
+                    <p>Feel free to join my dead discord server<br>(seriously I am all alone, not really in use)</p>
+                    <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/YTDnJUe" class="cardWrapper">
+                        <section>
+                            <i class="fab fa-discord"></i>
+                        </section>
+                        <section>
+                            <h3>Discord - Yarmy Squad</h3>
+                            <p>https://discord.gg/YTDnJUe</p>
+                        </section>
+                    </a>
+                </div>
+                <div id="social-twitter" class="social">
+                    <h1>Twitter</h1>
+                    <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark"
+                        href="https://twitter.com/YazaarVideos?ref_src=twsrc%5Etfw">Tweets by YazaarVideos</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div id="social-github" class="social">
+                    <h1>Github</h1>
+                    <p>You can find a whole lot of my coding projects on my github page.<br>Feel free to check it out!
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/yazaar" class="cardWrapper">
+                        <section>
+                            <i class="fab fa-github"></i>
+                        </section>
+                        <section>
+                            <h3>Github Projects</h3>
+                            <p>https://github.com/yazaar</p>
+                        </section>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <section id="PagesSection">
+        <h1 class="title">Websites</h1>
+        <div class="TitleBody">
+            <div class="TitleBodyTop">
+                <p class="InformativeText">Some static websites that I made which might be interesting if you found your way here</p>
+            </div>
+            <div class="TitleBodyBottom">
+
+                <div class="ProjectItem">
+                    <a class="ProjectLink OneLink">
+                        <div class="PageContent">
+                            <img src="" alt="">
+                            <h1>Empty</h1>
+                            <p>Nothing to show you for now, sorry...<br>But feel free to check my projects underneath out</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="ProjectSection">
+        <h1 class="title">Projects</h1>
+        <div class="TitleBody">
+            <div class="TitleBodyTop">
+                <p class="InformativeText">Web development and coding has been extremely important for me the past years, this is what drives me through the days, feel free to check my stuff out</p>
+            </div>
+            <div class="TitleBodyBottom">
+
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/CustomYouTubePlayer" class="CodeLink">Project link</a>
+                    <a href="/CustomYouTubePlayer" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/CustomYouTubePlayer.jpg" alt="Preview of Custom YouTube Player website">
+                            <h1>Custom YouTube Player</h1>
+                            <p>Video about the project is out, check the project link to find the video. One of my first reactive websites but has evolved into a fully functional YouTube player. Play YouTube videos, queue YouTube videos, browse videos, view playlists and more! Twitch streamer? Use the songrequest/videorequest feature and much more (check the guide top right on the player's website)</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/functions/RocketNotes" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/functions/RocketNotes" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/RocketNotes.png" alt="Preview of MusicLink website">
+                            <h1>RocketNotes</h1>
+                            <p>Notes application which I programmed as a exam project so no I don't like the code style used (vue)... But whatever it works...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="#ProjectSection" class="CodeLink">No project link</a>
+                    <a href="https://yazaar.herokuapp.com/MusicLink" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/MusicLink.jpg" alt="Preview of MusicLink website">
+                            <h1>MusicLink</h1>
+                            <p>Webbased OBS widget to show what is currently playing on multiple websites such as YouTube, SoundCloud and Monstercat</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/games/MrJump" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/games/MrJump" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/MrJump.jpg" alt="">
+                            <h1>Game: MrJump</h1>
+                            <p>A game made as a school project, jump your way to the other side as fast as possible by jumping from platform to platform</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/TwitchSubBadges" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/TwitchSubBadges" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/TwitchSubBadgeViewer.jpg" alt="Preview of Twitch sub badge viewer website">
+                            <h1>Twitch sub badge viewer</h1>
+                            <p>View users twitch sub badges, nothing more to it really</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/3DBlocks" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/WeirdAnimations/3DBlocks" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/3DBlocks.jpg" alt="Preview of 3D Blocks website">
+                            <h1>3D Blocks</h1>
+                            <p>Enter a 3D world where you are able to rotate around boring 3D blocks</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/ImageCutter" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/WeirdAnimations/ImageCutter" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/ImageCutter.jpg" alt="Preview of Image Cutter website">
+                            <h1>Image Cutter</h1>
+                            <p>Just a weird cutting animation...</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="ProjectItem">
+                    <a href="https://github.com/Yazaar/WebMagic/tree/master/clocks/ParticleClock" class="CodeLink">Project link</a>
+                    <a href="/WebMagic/clocks/ParticleClock/?image=https://images.unsplash.com/photo-1532762471988-c0d67cc3f771?ixlib=rb-1.2.1&auto=format&fit=crop&w=1414&q=80" class="ProjectLink">
+                        <div class="PageContent">
+                            <img src="./img/ParticleClock.jpg" alt="Preview of Custom YouTube Player website">
+                            <h1>Particle Clock</h1>
+                            <p>A particle clock which supports awesome backgrounds, check out the project link above and find a short YouTube video</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <script src="./js/index.js"></script>
 </body>
+
 </html>
