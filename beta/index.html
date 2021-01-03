@@ -34,7 +34,7 @@
             </span>
             <span class="animateFadeIn inlineBlock greenFont" id="socialsText" data-animateAfter="#arrow2">Socials</span>
         </h2>
-        <div id="twitchLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale">
+        <div id="twitchLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn active" data-animateAfter="#socialsText" data-animationName="fadeScale">
             <i class="fab fa-twitch"></i>
             <i class="fas fa-chevron-down"></i>
         </div>
@@ -54,8 +54,8 @@
             <i class="fab fa-github"></i>
             <i class="fas fa-chevron-down"></i>
         </div>
-        <section id="socialBlinder">
-            <section id="twitchLinkInfo" class="socialInfo">
+        <section id="socialBlinder" class="simpleFadeIn" data-animationName="fadeScale" data-animateAfter="#twitchLink">
+            <section id="twitchLinkInfo" class="socialInfo active">
                 <h3 class="socialInfoTitle">Twitch</h3>
                 <iframe src="https://player.twitch.tv/?channel=yazaar&autoplay=false&parent=yazaar.github.io" frameborder="0" allowfullscreen="true" scrolling="no" id="twitch-video"></iframe>
                 <iframe src="https://www.twitch.tv/embed/yazaar/chat?darkpopout&parent=yazaar.github.io" frameborder="0" scrolling="no" id="twitch-chat"></iframe>

@@ -1,6 +1,6 @@
 (function(){
     var allSocials = document.querySelectorAll('.socialInfo');
-    var currentSocial = null;
+    var currentSocial = document.querySelector('#twitchLinkInfo');
     var blinder = document.querySelector('#socialBlinder');
 
     function iterateCallback(selectorName, callback) {
@@ -123,6 +123,11 @@
         xml.open('get', 'https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&channelId=UCaJnr3RRxwrYkMbdJ0NPFFw&maxResults=1&order=date&type=video&videoEmbeddable=true&key=AIzaSyAeRjFfM1R2opdGUmaN7dtn7UTtS7hOEJM');
         xml.send();
     }
+
+    function updateBlinder() {
+        if (currentSocial === null) { return; }
+        blinder.style.height = currentSocial.offsetHeight + 'px';
+    }
     
     changeAge();
     iterateCallback('.animateFadeIn', animateFadeInElement);
@@ -130,10 +135,8 @@
     iterateCallback('.rotateIn', animateSimpleFadeIn);
     registerSocials();
     getLatestVideo();
+    updateBlinder();
     
-    window.addEventListener('resize', function(){
-        if (currentSocial === null) { return; }
-        blinder.style.height = currentSocial.offsetHeight + 'px';
-    });
+    window.addEventListener('resize', updateBlinder);
 
 })();
