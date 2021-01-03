@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yazaar | Beta Homepage</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto+Mono&display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
     <link rel="stylesheet" href="./css/index.css">
 </head>
@@ -14,7 +15,9 @@
     </header>
     <section id="me" class="pushIn">
         <h2>
-            <span class="animateFadeIn inlineBlock blockMarking greenFont" data-animationName="fadeInScale" id="arrow1">>></span>
+            <span class="translateUp">
+                <span class="animateFadeIn inlineBlock blockMarking greenFont" data-animationName="fadeInScale" id="arrow1">>></span>
+            </span>
             <span id="meText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow1">Me</span>
         </h2>
         <p class="simpleFadeIn" data-animateAfter="#meText" id="me1">Hi I am Yazaar! Some might know me as Jesper though.</p>
@@ -26,28 +29,85 @@
     </section>
     <section id="socials" class="pushIn">
         <h2 class="pushUp">
-            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow1" id="arrow2">>></span>
+            <span class="translateUp">
+                <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow1" id="arrow2">>></span>
+            </span>
             <span class="animateFadeIn inlineBlock greenFont" id="socialsText" data-animateAfter="#arrow2">Socials</span>
         </h2>
         <a href="https://www.twitch.tv/yazaar" target="_blank" rel="noopener noreferrer" id="twitchLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Twitch">
             <i class="fab fa-twitch"></i>
+            <i class="fas fa-chevron-down"></i>
         </a>
         <a href="https://www.youtube.com/channel/UCaJnr3RRxwrYkMbdJ0NPFFw" target="_blank" rel="noopener noreferrer" id="youtubeLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animationName="fadeScale" data-animateAfter="#socialsText" title="Visit my YouTube">
             <i class="fab fa-youtube"></i>
+            <i class="fas fa-chevron-down"></i>
         </a>
         <a href="https://discord.gg/YTDnJUe" target="_blank" rel="noopener noreferrer" id="discordLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Join my Discord">
             <i class="fab fa-discord"></i>
+            <i class="fas fa-chevron-down"></i>
         </a>
         <a href="https://twitter.com/YazaarVideos" target="_blank" rel="noopener noreferrer" id="twitterLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Twitter">
             <i class="fab fa-twitter"></i>
+            <i class="fas fa-chevron-down"></i>
         </a>
         <a href="https://github.com/yazaar" target="_blank" rel="noopener noreferrer" id="githubLink" class="socialWrapper inlineBlock blockMarking simpleFadeIn" data-animateAfter="#socialsText" data-animationName="fadeScale" title="Visit my Github">
             <i class="fab fa-github"></i>
+            <i class="fas fa-chevron-down"></i>
         </a>
+        <section id="socialBlinder">
+            <section id="twitchLinkInfo" class="socialInfo">
+                <h3 class="socialInfoTitle">Twitch</h3>
+                <iframe src="https://player.twitch.tv/?channel=yazaar&autoplay=false&parent=yazaar.github.io" frameborder="0" allowfullscreen="true" scrolling="no" id="twitch-video"></iframe>
+                <iframe src="https://www.twitch.tv/embed/yazaar/chat?darkpopout&parent=yazaar.github.io" frameborder="0" scrolling="no" id="twitch-chat"></iframe>
+            </section>
+            <section id="youtubeLinkInfo" class="socialInfo">
+                <h3 class="socialInfoTitle">YouTube</h3>
+                <section class="videoSplit">
+                    <section>
+                        <h3 class="socialInfoSubtitle">Featured</h3>
+                        <iframe class="YTVideo" src="https://www.youtube.com/embed/jV7i-dB8Quc" frameborder="0" allowfullscreen></iframe>
+                    </section>
+                    <section>
+                        <h3 class="socialInfoSubtitle">Newest</h3>
+                        <iframe class="YTVideo" id="latestVideo" src="https://www.youtube.com/embed/ofNPVIquT3s" frameborder="0" allowfullscreen></iframe>
+                    </section>
+                </section>
+            </section>
+            <section id="discordLinkInfo" class="socialInfo">
+                <h3 class="socialInfoTitle">Discord</h3>
+                <p class="socialInfoText">Feel free to join my dead discord server</p>
+                <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/YTDnJUe" class="cardWrapper">
+                    <i class="fab fa-discord"></i>
+                    <section class="rightCardWrap">
+                        <h3>Discord - Yarmy Squad</h3>
+                        <p>https://discord.gg/YTDnJUe</p>
+                    </section>
+                </a>
+            </section>
+            <section id="twitterLinkInfo" class="socialInfo">
+                <h3 class="socialInfoTitle">Twitter</h3>
+                <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark"
+                    href="https://twitter.com/YazaarVideos?ref_src=twsrc%5Etfw">Tweets by YazaarVideos</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </section>
+            <section id="githubLinkInfo" class="socialInfo">
+                <h3 class="socialInfoTitle">Github</h3>
+                <p class="socialInfoText">You can find a whole lot of my coding projects on my github page.<br>Feel free to check it out but prepare for nightmares...</p>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/yazaar" class="cardWrapper">
+                    <i class="fab fa-github"></i>
+                    <section class="rightCardWrap">
+                        <h3>Github Projects</h3>
+                        <p>https://github.com/yazaar</p>
+                    </section>
+                </a>
+            </section>
+        </section>
     </section>
     <section id="projects" class="pushIn">
         <h2>
-            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow2" id="arrow3">>></span>
+            <span class="translateUp">
+                <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow2" id="arrow3">>></span>
+            </span>
             <span id="projectsText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow3">Projects</span>
         </h2>
         <section class="cardList">
@@ -143,7 +203,9 @@
     </section>
     <section id="websites" class="pushIn">
         <h2>
-            <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow3" id="arrow4">>></span>
+            <span class="translateUp">
+                <span class="animateFadeIn inlineBlock blockMarking greenFont pushAway" data-animationName="fadeInScale" data-animateAfter="#arrow3" id="arrow4">>></span>
+            </span>
             <span id="websitesText" class="animateFadeIn inlineBlock greenFont" data-animateAfter="#arrow4">Websites</span>
         </h2>
         <section class="cardList">

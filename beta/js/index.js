@@ -1,4 +1,8 @@
 (function(){
+    var allSocials = document.querySelectorAll('.socialInfo');
+    var currentSocial = null;
+    var blinder = document.querySelector('#socialBlinder');
+
     function iterateCallback(selectorName, callback) {
         var e = document.querySelectorAll(selectorName);
         for (var i = 0; i < e.length; i++) {
@@ -75,9 +79,61 @@
         }
     }
 
+    function registerSocials() {
+        var e = document.querySelectorAll('.socialWrapper');
+        for (var i = 0; i < e.length; i++) {
+            processSocial(e[i], e, i)
+        }
+    }
+
+    function processSocial(e, all_e) {
+        var e_id = e.id;
+        e.addEventListener('mouseover', function(){
+            for (var i = 0; i < all_e.length; i++) {
+                all_e[i].classList.remove('active');
+            }
+            this.classList.add('active');
+            showSocial(e_id + 'Info');
+        });
+        return true;
+    }
+
+    function showSocial(socialId) {
+        currentSocial = document.querySelector('#' + socialId);
+        if (currentSocial === null) { return; }
+        for (var i = 0; i < allSocials.length; i++) {
+            allSocials[i].classList.remove('active');
+        }
+        
+        currentSocial.classList.add('active');
+        blinder.style.height = currentSocial.offsetHeight + 'px';
+    }
+
+    function getLatestVideo() {
+        var xml = new XMLHttpRequest();
+        xml.onreadystatechange = function() {
+            if (xml.readyState === 4){
+                if(xml.status === 200){
+                    document.querySelector('#latestVideo').src = 'https://www.youtube.com/embed/' + JSON.parse(xml.response).items[0].id.videoId;
+                } else {
+                    console.log('Unable to reach the YouTube API successfully');
+                }
+            }
+        }
+        xml.open('get', 'https://www.googleapis.com/youtube/v3/search?part=snippet%2Cid&channelId=UCaJnr3RRxwrYkMbdJ0NPFFw&maxResults=1&order=date&type=video&videoEmbeddable=true&key=AIzaSyAeRjFfM1R2opdGUmaN7dtn7UTtS7hOEJM');
+        xml.send();
+    }
+    
+    changeAge();
     iterateCallback('.animateFadeIn', animateFadeInElement);
     iterateCallback('.simpleFadeIn', animateSimpleFadeIn);
     iterateCallback('.rotateIn', animateSimpleFadeIn);
-    changeAge();
+    registerSocials();
+    getLatestVideo();
+    
+    window.addEventListener('resize', function(){
+        if (currentSocial === null) { return; }
+        blinder.style.height = currentSocial.offsetHeight + 'px';
+    });
 
 })();

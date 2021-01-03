@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     color: #cccccc;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -26,25 +27,135 @@ header h1 {
     margin: .25rem 0 0 .5rem;
 }
 
+header span {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+}
+
 #me p {
     font-size: 1.2rem;
     margin: .1rem 1rem;
 }
 
-#socials a {
+#socialBlinder {
+    position: relative;
+    height: 0px;
+    transition: height 500ms ease-in-out;
+    overflow: hidden;
+}
+
+.socialInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: opacity 100ms ease-in-out;
+    opacity: 0;
+}
+
+.socialInfo.active {
+    transition: opacity 250ms 100ms ease-in-out;
+    opacity: 1;
+    z-index: 9999;
+}
+
+.socialInfo .socialInfoTitle {
+    font-size: 1.7rem;
+}
+
+.socialInfo .socialInfoSubtitle {
+    font-size: 1.3rem;
+}
+
+.socialInfo .socialInfoText {
+    font-size: 1.2rem;
+}
+
+.cardWrapper {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    margin-top: .5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: solid #00FF00 .1rem;
+    background: rgba(0, 0, 0, .4);
+    transition: border-radius 250ms ease-in-out;
+}
+
+.cardWrapper:hover {
+    border-radius: 3rem;
+}
+
+.cardWrapper > i {
+    color: #00FF00;
+    font-size: 2.7rem;
+    margin-right: .5rem;
+}
+
+#socials > a {
+    margin: 1rem .5rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
     text-decoration: none;
 }
 
-#socials a i {
+#socials > a > i:first-of-type {
     font-size: 3rem;
     color: #777777;
-    margin: .5rem;
     transition: transform 250ms ease-in-out, color 250ms ease-in-out;
 }
 
-#socials a:hover i {
+#socials > a.active > i:first-of-type {
     transform: scale(1.2);
     color: #00FF00;
+}
+
+#socials > a > i:last-of-type {
+    font-size: 1.5rem;
+    display: inline-block;
+    color: #00FF00;
+    opacity: 0;
+    transform: scaleX(1.75) translateY(-2rem);
+    transition: opacity 500ms ease-in-out, transform 500ms ease-in-out;
+}
+
+#socials > a.active > i:last-of-type {
+    opacity: 1;
+    transform: scaleX(1.75) translateY(0);
+}
+
+.socialInfo h3 {
+    font-size: 1.4rem;
+}
+
+#twitch-video {
+    height: 20rem;
+    width: 35rem;
+    max-width: 75%;
+}
+
+#twitch-chat {
+    height: 20rem;
+    width: 20rem;
+    min-width: 210px;
+    max-width: 25%;
+}
+
+.videoSplit {
+    display: flex;
+}
+
+.videoSplit > section {
+    text-align: center;
+    margin: .5rem;
+}
+
+.YTVideo {
+    height: 15rem;
+    width: 28rem;
+    max-width: 100%;
 }
 
 .animateFadeIn span {
@@ -147,6 +258,11 @@ header h1 {
     margin: 0 .2rem .5rem .2rem;
 }
 
+.translateUp {
+    display: inline-block;
+    transform: translateY(-10%);
+}
+
 @keyframes fadeIn {
     0% {
         transform: translateX(-100%);
@@ -210,5 +326,38 @@ header h1 {
     
     100% {
         transform: rotate(0);
+    }
+}
+
+@media screen and (max-width:60rem) {
+    .videoSplit {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:51rem) {
+    #twitch-container {
+        flex-direction: column;
+    }
+    #twitch-video {
+        width: 100%;
+        max-width: 100%;
+    }
+    #twitch-chat {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width:25rem) {
+    .YTVideo {
+        height: 10rem;
+    }
+}
+
+@media screen and (max-width:17.5rem){
+    .cardWrapper {
+        padding: 0;
+        margin: 0;
     }
 }
