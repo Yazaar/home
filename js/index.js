@@ -29,7 +29,7 @@
             }
         }
         var animationName = e.getAttribute('data-animationName') || 'fadeIn';
-        var fadeTime = 100;
+        var fadeTime = 75;
         var text = e.innerText;
         e.innerHTML = '';
         e.style.opacity = '';
@@ -65,7 +65,7 @@
         }
         var animationName = e.getAttribute('data-animationName') || 'simpleFadeIn';
         e.style.opacity = '';
-        e.style.animation = animationName + ' 500ms ease-in-out forwards';
+        e.style.animation = animationName + ' 250ms ease-in-out forwards';
     }
 
     function changeAge() {
