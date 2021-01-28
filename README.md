@@ -1,3 +1,3 @@
 # home
-My github-hosted homepage
-https://yazaar.github.io/home
+My github-hosted page
+https://yazaar.github.io
