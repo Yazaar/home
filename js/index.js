@@ -69,7 +69,7 @@
     }
 
     function changeAge() {
-        var date1 = new Date('2001/01/29 00:00:00 UTC').getTime();
+        var date1 = new Date('2001/01/28 23:00:00 UTC').getTime();
         var date2 = new Date().getTime();
         var age = new String((date2 - date1) / 31557600000).split('.', 2);
         age = age[0] + ',' + age[1].substr(0, 5);
