@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: yazaar.github.io
+Token: 1093a8f702ec10b1c0c75a8fb35205a5a62828f1666572a9004f85916dd11e93
