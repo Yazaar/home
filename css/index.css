@@ -136,9 +136,9 @@ header span {
 
 #twitch-chat {
     height: 20rem;
-    width: 20rem;
-    min-width: 210px;
-    max-width: 25%;
+    width: 30rem;
+    min-width: 300px;
+    max-width: 30%;
 }
 
 .videoSplit {
@@ -341,7 +341,7 @@ header span {
     }
 }
 
-@media screen and (max-width:51rem) {
+@media screen and (max-width:58rem) {
     #twitch-container {
         flex-direction: column;
     }
