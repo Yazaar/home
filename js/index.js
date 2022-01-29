@@ -67,32 +67,18 @@
         e.style.opacity = '';
         e.style.animation = animationName + ' 250ms ease-in-out forwards';
     }
-
-    function passedBirthday(date, birthday) {
-        if (date.getUTCMonth() > birthday.getUTCMonth()) {
-            return true;
-        }
-        if (date.getUTCDate() > birthday.getUTCDate()) {
-            return true;
-        }
-        if (date.getUTCHours() > birthday.getUTCHours()) {
-            return true;
-        }
-        if (date.getUTCMinutes() >= birthday.getUTCMinutes()) {
-            return true;
-        }
-        return false;
-    }
     
     function changeAge() {    
         var today = new Date();
         var birthday = new Date('2001/01/28 23:00:00 UTC');
+        var yearToday = today.getUTCFullYear();
+        var thisYearBirthday =new Date(birthday).setUTCFullYear(yearToday);
         
         var years = today.getUTCFullYear() - birthday.getUTCFullYear();
-        if (passedBirthday(today, birthday)) {
-            var lastBirthdayYear = today.getUTCFullYear();
+        if (today - thisYearBirthday > 0) {
+            var lastBirthdayYear = yearToday;
         } else {
-            var lastBirthdayYear = today.getUTCFullYear()-1;
+            var lastBirthdayYear = yearToday-1;
             years--;
         }
 
