@@ -69,13 +69,17 @@
     }
 
     function changeAge() {
-        var date1 = new Date('2001/01/28 23:00:00 UTC').getTime();
-        var date2 = new Date().getTime();
-        var age = new String((date2 - date1) / 31557600000).split('.', 2);
-        age = age[0] + ',' + age[1].substr(0, 5);
-        var age_e = document.querySelector('#age');
-        if (age_e !== null) {
-            age_e.innerText = age;
+        var today = new Date();
+        var lastBirthday = new Date(today.getUTCFullYear() + '/01/28 23:00:00 UTC');
+        var birthday = new Date('2001/01/28 23:00:00 UTC');
+        
+        var years = new Date(today - birthday).getUTCFullYear()-1970;
+        var days = Math.floor((today - lastBirthday) / (1000 * 60 * 60 * 24));
+        
+        var ageStr = years + ' (+' + days + ' days)';
+        var ageElement = document.querySelector('#age');
+        if (ageElement !== null) {
+            ageElement.innerText = ageStr;
         }
     }
 
