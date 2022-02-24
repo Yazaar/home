@@ -54,24 +54,24 @@
             <i class="fab fa-github"></i>
             <i class="fas fa-chevron-down"></i>
         </div>
-        <section id="socialBlinder" class="simpleFadeIn" data-animationName="fadeScale" data-animateAfter="#twitchLink">
+        <div id="socialBlinder" class="simpleFadeIn" data-animationName="fadeScale" data-animateAfter="#twitchLink">
             <section id="twitchLinkInfo" class="socialInfo active">
                 <h3 class="socialInfoTitle">Twitch</h3>
-                <iframe src="https://player.twitch.tv/?channel=yazaar&autoplay=false&parent=yazaar.github.io" frameborder="0" allowfullscreen="true" scrolling="no" id="twitch-video"></iframe>
-                <iframe src="https://www.twitch.tv/embed/yazaar/chat?darkpopout&parent=yazaar.github.io" frameborder="0" scrolling="no" id="twitch-chat"></iframe>
+                <iframe src="https://player.twitch.tv/?channel=yazaar&autoplay=false&parent=yazaar.github.io" id="twitch-video"></iframe>
+                <iframe src="https://www.twitch.tv/embed/yazaar/chat?darkpopout&parent=yazaar.github.io" id="twitch-chat"></iframe>
             </section>
             <section id="youtubeLinkInfo" class="socialInfo">
                 <h3 class="socialInfoTitle">YouTube</h3>
-                <section class="videoSplit">
+                <div class="videoSplit">
                     <section>
                         <h3 class="socialInfoSubtitle">Featured</h3>
-                        <iframe class="YTVideo" src="https://www.youtube.com/embed/jV7i-dB8Quc" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="YTVideo" src="https://www.youtube.com/embed/jV7i-dB8Quc" allowfullscreen></iframe>
                     </section>
                     <section>
                         <h3 class="socialInfoSubtitle">Newest</h3>
-                        <iframe class="YTVideo" id="latestVideo" src="https://www.youtube.com/embed/ofNPVIquT3s" frameborder="0" allowfullscreen></iframe>
+                        <iframe class="YTVideo" id="latestVideo" src="https://www.youtube.com/embed/ofNPVIquT3s" allowfullscreen></iframe>
                     </section>
-                </section>
+                </div>
             </section>
             <section id="discordLinkInfo" class="socialInfo">
                 <h3 class="socialInfoTitle">Discord</h3>
@@ -88,7 +88,7 @@
                 <h3 class="socialInfoTitle">Twitter</h3>
                 <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark"
                     href="https://twitter.com/YazaarVideos?ref_src=twsrc%5Etfw">Tweets by YazaarVideos</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <script async src="https://platform.twitter.com/widgets.js"></script>
             </section>
             <section id="githubLinkInfo" class="socialInfo">
                 <h3 class="socialInfoTitle">Github</h3>
@@ -101,7 +101,7 @@
                     </section>
                 </a>
             </section>
-        </section>
+        </div>
     </section>
     <section id="projects" class="pushIn">
         <h2>
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project2" data-animationName="rotateIn" data-animateAfter="#project1">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#project1">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/functions/RocketNotes" class="codeLink">Github link</a>
                 <a href="/WebMagic/functions/RocketNotes" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -133,7 +133,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project3" data-animationName="rotateIn" data-animateAfter="#projectsText">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#projectsText">
                 <a class="codeLink">No Github link</a>
                 <a href="https://yazaar.herokuapp.com/MusicLink" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -144,7 +144,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project4" data-animationName="rotateIn" data-animateAfter="#project1">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#project1">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/games/MrJump" class="codeLink">Github link</a>
                 <a href="/WebMagic/games/MrJump" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project5" data-animationName="rotateIn" data-animateAfter="#projectsText">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#projectsText">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/TwitchSubBadges" class="codeLink">Github link</a>
                 <a href="/WebMagic/TwitchSubBadges" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -166,7 +166,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project6" data-animationName="rotateIn" data-animateAfter="#project1">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#project1">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/3DBlocks" class="codeLink">Github link</a>
                 <a href="/WebMagic/WeirdAnimations/3DBlocks" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project7" data-animationName="rotateIn" data-animateAfter="#projectsText">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#projectsText">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/WeirdAnimations/ImageCutter" class="codeLink">Github link</a>
                 <a href="/WebMagic/WeirdAnimations/ImageCutter" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -188,7 +188,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cardItem rotateIn" id="project8" data-animationName="rotateIn" data-animateAfter="#project1">
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#project1">
                 <a href="https://github.com/Yazaar/WebMagic/tree/master/clocks/ParticleClock" class="codeLink">Github link</a>
                 <a href="/WebMagic/clocks/ParticleClock/?image=https://images.unsplash.com/photo-1532762471988-c0d67cc3f771?ixlib=rb-1.2.1&auto=format&fit=crop&w=1414&q=80" class="projectLink">Project link</a>
                 <div class="projectContent">
@@ -196,6 +196,28 @@
                     <h3>Particle Clock</h3>
                     <div class="fill">
                         <p>A particle clock which supports awesome backgrounds, check out the github link above and find a short YouTube video</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#projectsText">
+                <a href="https://github.com/Yazaar/Spotify-Overlay" class="codeLink">Github link</a>
+                <a class="projectLink">No project link</a>
+                <div class="projectContent">
+                    <img src="./img/SpotifyOverlay.png" alt="Preview of Custom YouTube Player website">
+                    <h3>Spotify Overlay</h3>
+                    <div class="fill">
+                        <p>OBS overlay for Spotify, play through your regular spotify client and use this as a browser source. Easy setup, also on YouTube, check GitHub link for links.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cardItem rotateIn" data-animationName="rotateIn" data-animateAfter="#project1">
+                <a href="https://github.com/Yazaar/Spotify-Overlay" class="codeLink">Github link</a>
+                <a class="projectLink">No project link</a>
+                <div class="projectContent">
+                    <img src="./img/LSE.png" alt="Preview of Custom YouTube Player website">
+                    <h3>LSE</h3>
+                    <div class="fill">
+                        <p>Use LSE (Local StreamElements Cloudbot) to host your own Twitch and StreamElements chatbot, write your own scripts for Twitch messages and StreamElements events like donations and follow alerts. Your imagination is the only limit. Soon (hopefully) supporting Discord too together with an easier to use async workflow!</p>
                     </div>
                 </div>
             </div>
